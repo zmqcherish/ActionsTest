@@ -3,7 +3,7 @@ name: 'Actions Test'
 on: 
   push:
   schedule:
-    - cron: '*/5 * * * *' # cron表达式，Actions时区是UTC时间，所以上午9点要往前推8个小时
+    - cron: '*/5 * * * *' # cron表达式，Actions时区是UTC时间
 
 jobs:
   bot:
@@ -19,6 +19,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: 'run'
         env:
-          P_A: aaa
-          P_B: ${{ secrets.PWD }}
+          PWD: ${{ secrets.PWD }}
         run: python main.py
