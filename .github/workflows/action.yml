@@ -3,7 +3,7 @@ name: 'Actions Test'
 on: 
   push:
   schedule:
-    - cron: '*/5 * * * *' # cron表达式，Actions时区是UTC时间
+    - cron: '*/15 * * * *' # cron表达式，Actions时区是UTC时间
 
 jobs:
   bot:
