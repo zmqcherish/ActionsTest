@@ -1,0 +1,20 @@
+name: 'TEST'
+
+on: push
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v1
+      - name: 'install python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: 'pip'
+        run: pip install -r requirements.txt
+      - name: 'run'
+        env:
+          PWD: ${{ secrets.PWD }}
+        run: python test.py
