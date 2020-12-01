@@ -8,4 +8,4 @@ if __name__ == '__main__':
 	pb = os.environ["PWD"]
 	print(t)
 	# todo
-	# send2server_jiang(pb, t)
+	send2server_jiang(pb, t)
